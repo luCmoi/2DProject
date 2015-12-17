@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b5db1f68ef9645540971180e4435c107
+timeCreated: 1448991851
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - explodeCloudsEffect: {fileID: 19879062, guid: e9eb70c84e0a74343afa19e017050d47,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
