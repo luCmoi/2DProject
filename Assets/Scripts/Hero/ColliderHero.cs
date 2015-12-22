@@ -53,7 +53,7 @@ public class ColliderHero : MonoBehaviour {
             {
                 inExit = -1;
             }
-            transform.parent = collision.transform;
+            transform.parent = collision.transform.parent.parent;
         }
     }
 

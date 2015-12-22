@@ -62,26 +62,29 @@ public class Health : MonoBehaviour {
             {
                 if (shot.isEnemyShot != isEnemy)
                 {
-                    hp -= shot.damage;
-                    invulnerability = invulnerabilityTime;
+                    Damage(shot.damage);
                 }
             }
             TouchingHurts trap = collider.gameObject.GetComponent<TouchingHurts>();
             if (trap != null)
             {
-                hp -= trap.damage;
-                invulnerability = invulnerabilityTime;
+                Damage(trap.damage);
             }
             Flammer flamme = collider.gameObject.GetComponent<Flammer>();
             if (flamme != null)
             {
                 if (flamme.dangerous)
                 {
-                    hp -= flamme.damage;
-                    invulnerability = invulnerabilityTime;
+                    Damage(flamme.damage);
                 }
             }
         }
+
+    }
+
+    void Damage(int damage)
+    {
+        hp -= damage;
         if (hp <= 0)
         {
             if (isHero)
@@ -89,6 +92,7 @@ public class Health : MonoBehaviour {
                 invulnerability = 0;
                 SpecialEffectHelper.Instance.ExplodeClouds(transform.position);
                 SoundEffectHelper.Instance.MakeEggCrackSound();
+                transform.GetComponent<Wound>().Reset();
                 transform.GetComponent<Respawn>().Die();
             }
             else
@@ -96,6 +100,14 @@ public class Health : MonoBehaviour {
                 SpecialEffectHelper.Instance.ExplodeClouds(transform.position);
                 SoundEffectHelper.Instance.MakeEggCrackSound();
                 Destroy(gameObject);
+            }
+        }
+        else
+        {
+            invulnerability = invulnerabilityTime;
+            if (isHero)
+            {
+                transform.GetComponent<Wound>().Add();
             }
         }
     }

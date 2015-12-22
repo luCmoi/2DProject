@@ -5,7 +5,7 @@ public class TouchingHurts : MonoBehaviour {
     // Points de dégâts infligés
     public int damage = 1;
     /// Projectile ami ou ennemi ?
-    public bool isEnemyShot = true;
+    private bool isEnemyShot = true;
 
     void Start()
     {

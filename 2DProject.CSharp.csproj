@@ -51,17 +51,11 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Analytics">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
@@ -81,17 +75,14 @@
     <Compile Include="Assets\2DLightAssets\Scripts\Helpers\interface_touch.cs" />
     <Compile Include="Assets\2DLightAssets\Scripts\Helpers\interface_touch2.cs" />
     <Compile Include="Assets\2DLightAssets\Scripts\rotate.cs" />
-    <Compile Include="Assets\Scripts\CameraAttitude.cs" />
-    <Compile Include="Assets\Scripts\EggCreator.cs" />
-    <Compile Include="Assets\Scripts\EggsNeutralBehavior.cs" />
-    <Compile Include="Assets\Scripts\EndFlyingPlatform.cs" />
-    <Compile Include="Assets\Scripts\EndSpawner.cs" />
+    <Compile Include="Assets\Scripts\Danger\Flammer.cs" />
     <Compile Include="Assets\Scripts\Ennemy_Script.cs" />
-    <Compile Include="Assets\Scripts\Flammer.cs" />
     <Compile Include="Assets\Scripts\GameUtilities.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
     <Compile Include="Assets\Scripts\Hero\ColliderHero.cs" />
     <Compile Include="Assets\Scripts\Hero\EggController.cs" />
+    <Compile Include="Assets\Scripts\MobBehavior\EggsNeutralBehavior.cs" />
+    <Compile Include="Assets\Scripts\MobBehavior\FlyBehavior.cs" />
     <Compile Include="Assets\Scripts\MovingPlatform.cs" />
     <Compile Include="Assets\Scripts\PageText.cs" />
     <Compile Include="Assets\Scripts\PlatformSpawner.cs" />
@@ -99,10 +90,15 @@
     <Compile Include="Assets\Scripts\RespawnPoint.cs" />
     <Compile Include="Assets\Scripts\Shot_Script.cs" />
     <Compile Include="Assets\Scripts\SoundEffectHelper.cs" />
+    <Compile Include="Assets\Scripts\Spawner\EggCreator.cs" />
+    <Compile Include="Assets\Scripts\Spawner\EndFlyingPlatform.cs" />
+    <Compile Include="Assets\Scripts\Spawner\EndSpawner.cs" />
     <Compile Include="Assets\Scripts\SpecialEffectHelper.cs" />
     <Compile Include="Assets\Scripts\TextAppearence.cs" />
     <Compile Include="Assets\Scripts\TouchingHurts.cs" />
+    <Compile Include="Assets\Scripts\Utilities\CameraAttitude.cs" />
     <Compile Include="Assets\Scripts\Weapon_Script.cs" />
+    <Compile Include="Assets\Scripts\Wound.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\2DLightAssets\Shaders\Gradient-NoTexture-Radial-SingleColor-ToTransparent-RegularUV-AlphaBlend.shader" />
