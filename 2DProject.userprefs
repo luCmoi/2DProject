@@ -1,14 +1,11 @@
-﻿<Properties>
+﻿<Properties StartupItem="2DProject.CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Scrolling_Script.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Health.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player_Script.cs" Line="30" Column="26" />
-      <File FileName="Assets\Scripts\Move_Script.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Health.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Shot_Script.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Health_Script.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Weapon_Script.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Ennemy_Script.cs" Line="11" Column="3" />
-      <File FileName="Assets\Scripts\Scrolling_Script.cs" Line="20" Column="33" />
+      <File FileName="Assets\Scripts\Ennemy_Script.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

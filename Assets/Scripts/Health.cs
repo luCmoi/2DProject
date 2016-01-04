@@ -9,6 +9,7 @@ public class Health : MonoBehaviour {
     public bool isHero = false;
     public float invulnerabilityTime = 0f;
 
+    private int bonusCount = 0;
     private int hp;
     private float invulnerability;
 
@@ -16,6 +17,10 @@ public class Health : MonoBehaviour {
     {
         invulnerability = 0f;
         hp = hpMax;
+        if (isHero)
+        {
+            transform.GetComponent<Wound>().Activate(hpMax-1);
+        }
     }
 
     public void restoreHpMax()
@@ -97,8 +102,10 @@ public class Health : MonoBehaviour {
             }
             else
             {
-                SpecialEffectHelper.Instance.ExplodeClouds(transform.position);
-                SoundEffectHelper.Instance.MakeEggCrackSound();
+                if (transform.GetComponent<Renderer>().isVisible) {
+                    SpecialEffectHelper.Instance.ExplodeClouds(transform.position);
+                    SoundEffectHelper.Instance.MakeEggCrackSound();
+                }
                 Destroy(gameObject);
             }
         }
@@ -109,6 +116,18 @@ public class Health : MonoBehaviour {
             {
                 transform.GetComponent<Wound>().Add();
             }
+        }
+    }
+
+    public void BonusCollect()
+    {
+        bonusCount++;
+        if (bonusCount >= 3)
+        {
+            bonusCount = 0;
+            hpMax++;
+            restoreHpMax();
+            transform.GetComponent<Wound>().Activate(hpMax-1);
         }
     }
 

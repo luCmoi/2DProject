@@ -43,17 +43,42 @@ public class ColliderHero : MonoBehaviour {
         {
             textAppearance.Play();
         }
+        BonusCollect bonusCollect = collider.gameObject.GetComponent<BonusCollect>();
+        if (bonusCollect != null)
+        {
+            bonusCollect.Play();
+            transform.GetComponent<Health>().BonusCollect();
+        }
+        PopPlatformStartEnd popPlatform = collider.gameObject.GetComponent<PopPlatformStartEnd>();
+        if (popPlatform != null)
+        {
+            popPlatform.Play();
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.tag == "MovingGround" )
+        if (collision.transform.tag == "MovingGround")
         {
             if (inExit > -1)
             {
                 inExit = -1;
             }
-            transform.parent = collision.transform.parent.parent;
+            if (collision.transform.parent != null)
+            {
+                if (collision.transform.parent.parent != null)
+                {
+                    transform.parent = collision.transform.parent.parent;
+                }
+                else
+                {
+                    transform.parent = collision.transform.parent;
+                }
+            }
+            else
+            {
+                transform.parent = collision.transform;
+            }
         }
     }
 
